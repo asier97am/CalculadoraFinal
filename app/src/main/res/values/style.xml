@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="myButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">#E1E1E1</item>
+        <item name="strokeColor">#8BC34A</item>
+        <item name="cornerRadius">4dp</item>
+    </style>
+    <style name="myButtonC" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">#FF5722</item>
+        <item name="strokeColor">#F44336</item>
+        <item name="cornerRadius">4dp</item>
+    </style>
+
+</resources>
