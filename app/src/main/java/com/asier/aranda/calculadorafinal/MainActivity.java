@@ -4,19 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    //ID's
+    public Button suma,resta ,multiplicacion ,division, C, DEL,igual;
+    public Button _1,_2,_3,_4,_5,_6,_7,_8,_9,punto;
 
-   /* public Button suma,resta ,multiplicacion ,division, C, DEL,igual;
-    public Button _1,_2,_3,_4,_5,_6,_7,_8,_9,punto;*/
     public TextView resultado;
 
     float numero1=0.0f;
     float numero2=0.0f;
     String operacion="";
+    float valor=0.0f;
 
 
 
@@ -25,29 +27,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* suma=(Button) findViewById(R.id.suma);
-        resta=(Button) findViewById(R.id.resta);
-        multiplicacion=(Button) findViewById(R.id.multiplicacion);
-        division=(Button) findViewById(R.id.division);
-        C=(Button) findViewById(R.id.C);
-        DEL=(Button) findViewById(R.id.DEL);
-        igual=(Button) findViewById(R.id.igual);
-        _1=(Button) findViewById(R.id._1);
-        _2=(Button) findViewById(R.id._2);
-        _3=(Button) findViewById(R.id._3);
-        _4=(Button) findViewById(R.id._4);
-        _5=(Button) findViewById(R.id._5);
-        _6=(Button) findViewById(R.id._6);
-        _7=(Button) findViewById(R.id._7);
-        _8=(Button) findViewById(R.id._8);
-        _9=(Button) findViewById(R.id._9);
-        punto=(Button) findViewById(R.id.punto);*/
-        resultado=findViewById(R.id.resultado);
+        suma = (Button) findViewById(R.id.suma);
+        resta = (Button) findViewById(R.id.resta);
+        multiplicacion = (Button) findViewById(R.id.multiplicacion);
+        division = (Button) findViewById(R.id.division);
+        C = (Button) findViewById(R.id.C);
+        DEL = (Button) findViewById(R.id.DEL);
+        igual = (Button) findViewById(R.id.igual);
+        _1 = (Button) findViewById(R.id._1);
+        _2 = (Button) findViewById(R.id._2);
+        _3 = (Button) findViewById(R.id._3);
+        _4 = (Button) findViewById(R.id._4);
+        _5 = (Button) findViewById(R.id._5);
+        _6 = (Button) findViewById(R.id._6);
+        _7 = (Button) findViewById(R.id._7);
+        _8 = (Button) findViewById(R.id._8);
+        _9 = (Button) findViewById(R.id._9);
+        punto = (Button) findViewById(R.id.punto);
+        resultado = findViewById(R.id.resultado);
 
 
     }
     public void escribir0(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+        valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("0");
         }else{
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir1(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("1");
         }else{
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir2(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("2");
         }else{
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir3(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("3");
         }else{
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir4(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("4");
         }else{
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir5(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("5");
         }else{
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir6(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("6");
         }else{
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void escribir7(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("7");
         }else{
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir8(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("8");
         }else{
@@ -120,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void escribir9(View view) {
-        float valor=Float.parseFloat(resultado.getText().toString());
+         valor=Float.parseFloat(resultado.getText().toString());
         if(valor==0.0f){
             resultado.setText("9");
         }else{
@@ -137,11 +139,20 @@ public class MainActivity extends AppCompatActivity {
         resultado.setText("0");
         numero1=0.0f;
         numero2=0.0f;
+        valor=0.0f;
         operacion="";
 
     }
     public void eliminar(View view) {
-       // resultado.setText(resultado.getText());
+        String cadena=String.valueOf(resultado.getText());
+        if(!cadena.equals("0")){
+            cadena.substring(-2);
+            resultado.setText(cadena);
+        }
+        else
+            resultado.setText("0");
+
+
     }
 
     public void OperacionDividir(View view) {
@@ -200,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
         numero1=0.0f;
         numero2=0.0f;
         operacion="";
+        valor=0.0f;
     }
 
 
