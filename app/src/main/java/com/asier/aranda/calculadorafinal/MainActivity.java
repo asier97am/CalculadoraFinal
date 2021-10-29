@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         if (operacion.equals("/")) {
             if (numero2 != 0) {
                 result = numero1 / numero2;
-                resultado.setText(numero1 + " / " + numero2 + "\n = " + result);
+                resultado.setText("" + result);
             } else {
                 resultado.setText("0");
                 Toast.makeText(this, "OPERACION NO VALIDA", Toast.LENGTH_LONG).show();
@@ -208,10 +208,10 @@ public class MainActivity extends AppCompatActivity {
             resultado.setText(""+result);
         } else if (operacion.equals("+")) {
             result = numero1 + numero2;
-            resultado.setText(numero1 + " + " + numero2 + "\n = " + result);
+            resultado.setText("" + result);
         } else if (operacion.equals("-")) {
             result = numero1 - numero2;
-            resultado.setText(numero1 + " - " + numero2 + "\n = " + result);
+            resultado.setText("" + result);
         }
         //resultado.setText("0");
         numero1 = 0.0f;
