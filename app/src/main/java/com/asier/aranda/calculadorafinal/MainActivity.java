@@ -2,6 +2,7 @@ package com.asier.aranda.calculadorafinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void escribir0(View view) {
         valor = Float.parseFloat(resultado.getText().toString());
         if (valor == 0.0f) {
