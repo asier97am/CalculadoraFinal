@@ -1,10 +1,13 @@
 package com.asier.aranda.calculadorafinal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
-import android.annotation.SuppressLint;
+
+
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public Button _1, _2, _3, _4, _5, _6, _7, _8, _9, punto;
 
     public TextView resultado;
+
+    public Switch switchTheme;
 
     float numero1 = 0.0f;
     float numero2 = 0.0f;
@@ -27,29 +32,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        suma = (Button) findViewById(R.id.suma);
-        resta = (Button) findViewById(R.id.resta);
-        multiplicacion = (Button) findViewById(R.id.multiplicacion);
-        division = (Button) findViewById(R.id.division);
-        C = (Button) findViewById(R.id.C);
-        DEL = (Button) findViewById(R.id.DEL);
-        igual = (Button) findViewById(R.id.igual);
-        _1 = (Button) findViewById(R.id._1);
-        _2 = (Button) findViewById(R.id._2);
-        _3 = (Button) findViewById(R.id._3);
-        _4 = (Button) findViewById(R.id._4);
-        _5 = (Button) findViewById(R.id._5);
-        _6 = (Button) findViewById(R.id._6);
-        _7 = (Button) findViewById(R.id._7);
-        _8 = (Button) findViewById(R.id._8);
-        _9 = (Button) findViewById(R.id._9);
-        punto = (Button) findViewById(R.id.punto);
+
+        suma = findViewById(R.id.suma);
+        resta = findViewById(R.id.resta);
+        multiplicacion = findViewById(R.id.multiplicacion);
+        division = findViewById(R.id.division);
+        C = findViewById(R.id.C);
+        DEL = findViewById(R.id.DEL);
+        igual = findViewById(R.id.igual);
+        _1 = findViewById(R.id._1);
+        _2 = findViewById(R.id._2);
+        _3 = findViewById(R.id._3);
+        _4 = findViewById(R.id._4);
+        _5 = findViewById(R.id._5);
+        _6 = findViewById(R.id._6);
+        _7 = findViewById(R.id._7);
+        _8 = findViewById(R.id._8);
+        _9 = findViewById(R.id._9);
+        punto = findViewById(R.id.punto);
         resultado = findViewById(R.id.resultado);
 
+        switchTheme=findViewById(R.id.switchDark);
 
     }
+    public void changeTheme(View view){
+        if(switchTheme.isChecked()){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            recreate();
+        }else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            recreate();
+    }
 
-    @SuppressLint("SetTextI18n")
     public void escribir0(View view) {
         valor = Float.parseFloat(resultado.getText().toString());
         if (valor == 0.0f) {
