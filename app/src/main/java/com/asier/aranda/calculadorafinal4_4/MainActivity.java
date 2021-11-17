@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     //ID's
     public Button suma, resta, multiplicacion, division, C, DEL, igual;
     public Button _1, _2, _3, _4, _5, _6, _7, _8, _9, punto;
+    public ImageButton __9;
 
     public TextView resultado;
 
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         _7 = findViewById(R.id._7);
         _8 = findViewById(R.id._8);
         _9 = findViewById(R.id._9);
+        __9 = findViewById(R.id.imageButton);
         punto = findViewById(R.id.punto);
         resultado = findViewById(R.id.resultado);
 
